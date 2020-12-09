@@ -2,12 +2,14 @@
   main {
     display: grid;
     grid-template-columns: auto auto;
+    width: 100vw;
   }
-  #left{
-      grid-column: 1/  2;
+  #left {
+    grid-column: 1/ 2;
   }
-  #canvas{
-      grid-column: 2/  3;
-      grid-row: 1
+  #canvas {
+    grid-column: 2/ 3;
+    grid-row: 1;
+    width: 100%;
   }
 }
