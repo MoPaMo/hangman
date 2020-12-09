@@ -15,19 +15,19 @@ $(function () {
     ob.animate({ opacity: 0 }, 500);
   }
   var errorCount = 0;
-  function die(){
-      alert("You died")
+  function die() {
+    alert("You died");
   }
   function rerror() {
     errorCount++;
-    
+
     if (errorCount > 8) {
       die();
     }
-    objects[errorCount-1].animate({ opacity: 1 }, 1000);
+    objects[errorCount - 1].animate({ opacity: 1 }, 1000);
   }
   rerror();
-  $(document).click(function(){
-      rerror()
-  })
+  $(document).click(function () {
+    rerror();
+  });
 });
