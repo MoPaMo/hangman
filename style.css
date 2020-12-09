@@ -1,0 +1,13 @@
+@media only screen and (min-width: 600px) {
+  main {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  #left{
+      grid-column: 1/  2;
+  }
+  #canvas{
+      grid-column: 2/  3;
+      grid-row: 1
+  }
+}
