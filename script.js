@@ -26,8 +26,33 @@ $(function () {
     }
     objects[errorCount - 1].animate({ opacity: 1 }, 1000);
   }
-  rerror();
-  $(document).click(function () {
-    rerror();
+
+  function guessed(charG){
+      if(array.indexOf(charG)!=-1){
+      while(array.indexOf(charG)!=-1){
+        let pos= array.indexOf(charG)
+        $("#textbar span:nth-child("+(pos*1+1)+")").html(charG)
+        array[pos]="_________________"
+      }}
+      else{
+          rerror()
+      }
+  }
+  $("input").on("keyup", function(){
+      if($(this).val()!=""){
+      let c =$(this).val()
+      $(this).val("")
+      guessed(c)}
+  })
+  $.getJSON("names.js?callback=hi", function(){
+
+  
+var  string="Hallo"
+  var array =string.split('')
+  for (char of array){
+      array[array.indexOf(char)]=char.toLowerCase()
+      $("#textbar").append("<span>_</span> ")
+  }
   });
+
 });
