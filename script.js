@@ -22,7 +22,9 @@ function die() {
 }
 function rerror() {
   errorCount++;
-
+ if(localStorage.volume!==null&&localStorage.volume!==false){
+var errorSound=new Audio("error_008.ogg");
+errorSound.play()}
   if (errorCount > 8) {
     die();
   }
@@ -50,11 +52,11 @@ function guessed(charG) {
       let pos = array.indexOf(charG);
       $("#textbar span:nth-child(" + (pos * 1 + 1) + ")").html(charG);
       array[pos] = "_________________";
-      $("#donechar").append('<span class="green">' + charG + "</span>");
+      $("#donechar").append('<span class="rounded-full bg-green-400 p-1">' + charG + "</span>");
       checkwon()
     }
   } else {
-    $("#donechar").append('<span class="red">' + charG + "</span>");
+    $("#donechar").append('<span class="rounded-full bg-red-400 p-1">' + charG + "</span>");
     rerror();
   }
 }
