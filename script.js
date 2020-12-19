@@ -1,5 +1,5 @@
 //$(function () {
-  var array, string
+var array, string;
 var s = Snap("#svg");
 var objects = [
   Snap.select("#h-1"),
@@ -13,50 +13,61 @@ var objects = [
   Snap.select("#b-r"),
 ];
 for (ob of objects) {
-  ob.animate({ opacity: 0 }, 500);
+  ob.animate({ opacity: 0 }, 0);
 }
+$("#errorMessage,#winMessage").hide();
+
 var errorCount = 0;
 function die() {
-  $("*").append(string);
-  alert("You died");
+  $("input").attr("disabled", "true")
+
+  $(".realtext").append(string);
+  $("#errorMessage").fadeIn();
 }
 function rerror() {
   errorCount++;
- if(localStorage.volume!==null&&localStorage.volume!==false){
-var errorSound=new Audio("error_008.ogg");
-errorSound.play()}
+  if (localStorage.volume !== null && localStorage.volume !== false) {
+    var errorSound = new Audio("error_008.ogg");
+    errorSound.play();
+  }
   if (errorCount > 8) {
     die();
   }
   objects[errorCount - 1].animate({ opacity: 1 }, 1000);
 }
-function win(){
-  alert("YOU WON")
+function win() {
+  $("#winMessage").fadeIn();
+  $("input").attr("disabled", "true")
 }
-function checkwon(){
-  let broken =false
-  for (it of array){
-    if(it=="_________________"){
-
-    }
-    else{
+function checkwon() {
+  let broken = false;
+  for (it of array) {
+    if (it == "_________________") {
+    } else {
       broken = true;
-      break
+      break;
     }
   }
-  if(!broken) win()
+  if (!broken) win();
 }
+$("#errorMessage,#winMessage").click(function () {
+  open("./index.html", "_SELF");
+});
 function guessed(charG) {
   if (array.indexOf(charG) != -1) {
     while (array.indexOf(charG) != -1) {
       let pos = array.indexOf(charG);
       $("#textbar span:nth-child(" + (pos * 1 + 1) + ")").html(charG);
       array[pos] = "_________________";
-      $("#donechar").append('<span class="rounded-full bg-green-400 p-1">' + charG + "</span>");
-      checkwon()
+      $("#donechar").append(
+        '<span class="rounded-full m-1 bg-green-400 p-1">' + charG + "</span>"
+      );
+      checkwon();
     }
   } else {
-    $("#donechar").append('<span class="rounded-full bg-red-400 p-1">' + charG + "</span>");
+    $("#donechar").append(
+      '<span class="rounded-full m-1 bg-red-400 p-1">' + charG + "</span>"
+    );
     rerror();
   }
 }
@@ -82,5 +93,5 @@ for (char of array) {
   array[array.indexOf(char)] = char.toLowerCase();
   $("#textbar").append("<span>_</span> ");
 }*/
-start()
+start();
 //});

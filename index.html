@@ -31,20 +31,19 @@
             </svg></div>
         <div id="left" class="text-center text-gray-900 dark:text-blue-50">
             <div id="textbar" class="text-xl"></div>
-            <div id="donechar" class="p-2"><span class="rounded-full bg-red-400 p-1 m-1">A</span><span
-                    class="rounded-full bg-green-400 p-1 m-1">A</span></div>
+            <div id="donechar" class="p-2"></div>
             <input type="text" maxlength="1" autofocus
                 class="bg-opacity-0 border-0 focus:border-0 focus:ring-0 dark:bg-gray-900">
 
-            <div class="bg-red-400 rounded-lg text-gray-50 p-2 mt-5 cursor-pointer">
-                <h2 class="text-lg">LEIDER FALSCH</h2><br />Richtig wäre <span class="text-green-500"></span>
+            <div id="errorMessage" class="bg-red-400 rounded-lg text-gray-50 p-2 mt-5 text-center cursor-pointer">
+                <h2 class="text-lg">LEIDER FALSCH</h2><br />Richtig wäre <span class="text-gray-50 realtext"></span>
                 gewesen<br /><svg class="w-1/4 stroke-current fill-current text-gray-50"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
                         d="M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z" />
                     </svg> NOCHMAL
             </div>
-            <div class="bg-green-500 rounded-lg text-gray-50 p-2 mt-5 text-center">
+            <div id="winMessage" class="bg-green-500 rounded-lg text-gray-50 p-2 mt-5 text-center cursor-pointer">
                 <h2 class="text-lg">RICHTIG</h2><br /><svg class="w-1/4 stroke-current fill-current text-gray-50"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
